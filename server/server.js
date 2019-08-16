@@ -15,10 +15,10 @@ MongoClient.connect('mongodb://localhost:27017')
     const db = client.db('trackshack');
     const trackingsCollection = db.collection('tracking');
     const trackingsRouter = createRouter(trackingsCollection);
-    app.use('/api/tracking', trackingsRouter);
+    app.use('/', trackingsRouter);
   })
   .catch(console.error);
-
+//fetch
   app.post('/search', (req, res) => {
     const query = req.body;
     fetch("https://trackapi.nutritionix.com/v2/natural/nutrients", {
@@ -30,8 +30,8 @@ MongoClient.connect('mongodb://localhost:27017')
         "x-app-key" : process.env.API_KEY
       }
     })
-    .then(res => res.json())
-    .then(data => {
+    .then(res => res.json())//original response into json
+    .then(data => {//return, still as json, and return it to the frontend
       res.json(data);
     })
     .catch((err) => {
