@@ -3,6 +3,7 @@
 
     <ul v-if="food !== null">
       <li>{{food.name}}</li>
+      <li>{{foot.fat}}</li>
 
     </ul>
 
