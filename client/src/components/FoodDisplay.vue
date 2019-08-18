@@ -5,7 +5,7 @@
     <div class="">
 
       <select @change="foodSelected">
-        <option selected disabled>-</option>
+        <option selected disabled></option>
         <option v-for="(food, index) in foodDisplay" :value="index">{{food.name}}</option>
       </select>
 

@@ -1,14 +1,15 @@
 <template lang="html">
   <div id="app">
-    <div class="foods" v-for="food in foodAdded"/>
-      <h2>Saved Food</h2>
-      <h3>Name: {{ food.name }}</h3>
-      <p>Calories: {{ food.calories }}</p>
-      <p>Fat: {{ food.fat }}</p>
-      <p>Protein: {{ food.protein }}</p>
-      <p>Carbs: {{ food.carbs }}</p>
-    </div>
-
+    <h2>Saved Food</h2>
+    <ul>
+      <li v-for="food in foodAdded">
+        <h3>Name: {{ food.name }}</h3>
+        <p>Calories: {{ food.calories }}</p>
+        <p>Fat: {{ food.fat }}</p>
+        <p>Protein: {{ food.protein }}</p>
+        <p>Carbs: {{ food.carbs }}</p>
+      </li>
+    </ul>
 
   </div>
 </template>
