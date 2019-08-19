@@ -1,13 +1,15 @@
 <template lang="html">
 
+<div class="">
 
-    <ul v-if="food !== null">
+
+    <ul v-for="(food, index) in foods" :key="index" :food="food">
       <li>{{food.food_name}}</li>
       <li>{{food.serving_unit}}</li>
-      <button @click="addFood(food._id)">Save Food</button>
+      <button @click="addFood(index)">Save Food</button>
     </ul>
 
-
+</div>
 </template>
 
 <script>
@@ -16,20 +18,31 @@ import { eventBus } from '../main.js';
 
 export default {
   name: 'food-info',
-  props: ['food'],
+  data(){
+    return {
+      foods: []
+    }
+  },
   methods: {
-    addFood(){
+    addFood(index){
       // e.preventDefault()
        const food = {
-         name: this.food.name,
-         calories: this.food.calories,
-         fat: this.food.fat,
-         protein: this.food.protein,
-         carbs: this.food.carbs
+         servingSize: this.foods[index].serving_qty,
+         name: this.foods[index].food_name,
+         calories: this.foods[index].nf_calories,
+         fat: this.foods[index].nf_total_fat,
+         protein: this.foods[index].nf_protein,
+         carbs: this.foods[index].nf_total_carbohydrate
        }
        FoodService.postFood(food)
          .then(res => eventBus.$emit('food-added', res))
      }
+  },
+  mounted() {
+    eventBus.$on('food-search-result', newFood => {
+      console.log(newFood);
+      this.foods = newFood;
+    })
   }
 
 }

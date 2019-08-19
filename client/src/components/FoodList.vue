@@ -21,7 +21,7 @@ import {eventBus} from '@/main.js';
 
 export default {
   name: 'food-list',
-  props: ['foodList'],
+  // props: ['foodList',
   data(){
     return {
       search: '',
@@ -36,14 +36,11 @@ export default {
         headers: {'Content-Type': 'application/json'}
       })
       .then(res => res.json())
-      .then(data => this.foods = data)
-    },
-    foodSelected(event){
-      const selectedIndex = event.target.value;
-      eventBus.$emit('food-list-item-selected', selectedIndex);
+      .then(data => this.foods = data.foods)
+      .then(res => eventBus.$emit('food-search-result', this.foods))
     }
   }
-}
+  }
 
   </script>
 

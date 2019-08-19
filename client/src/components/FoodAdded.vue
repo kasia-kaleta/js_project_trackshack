@@ -4,6 +4,7 @@
     <ul>
       <li v-for="food in foodAdded">
         <h3>Name: {{ food.name }}</h3>
+        <p>Serving Size: {{ food.servingSize }}</p>
         <p>Calories: {{ food.calories }}</p>
         <p>Fat: {{ food.fat }}</p>
         <p>Protein: {{ food.protein }}</p>

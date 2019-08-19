@@ -3,7 +3,8 @@ db.dropDatabase();
 
 db.foods.insertMany([
   {
-    name: "falafel",
+    name: "Falafel",
+    servingSize: "1",
     calories: "54.87",
     fat: "3.03",
     protein: "2.26",
@@ -11,6 +12,7 @@ db.foods.insertMany([
   },
   {
     name: "Pizza",
+    servingSize: "1",
     calories: "333.87",
     fat: "44.03",
     protein: "29.26",
@@ -18,6 +20,7 @@ db.foods.insertMany([
   },
   {
     name: "Eggs and bacon",
+    servingSize: "1",
     calories: "150.87",
     fat: "20.03",
     protein: "40.26",

@@ -1,7 +1,7 @@
 <template lang="html">
 <div id="app">
-  <food-list :foodList="foodList"/>
-  <food-info :food="selectedFood"/>
+  <food-list />
+  <food-info />
   <food-added :foodAdded="foodAdded"/>
 
 
@@ -21,8 +21,7 @@ export default {
   data(){
     return {
       foodList: [],
-      foodAdded: [],
-      selectedFood: null
+      foodAdded: []
     }
   },
   computed: {
@@ -32,10 +31,9 @@ export default {
   mounted(){
     // FoodService.getFoods2()
     // .then(foodList => this.foodList = foodList.foods); // get the 'foods' table from the API's response
+    FoodService.getFoods()
+    .then( res => this.foodAdded = res);
 
-    eventBus.$on('food-list-item-selected', (selectedIndex) => {
-      this.selectedFood = this.foodList[selectedIndex];
-    });
 
     eventBus.$on('food-added', food => this.foodAdded.push(food));
 
