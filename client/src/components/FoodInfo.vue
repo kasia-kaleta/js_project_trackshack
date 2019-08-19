@@ -36,15 +36,19 @@ export default {
        }
        FoodService.postFood(food)
          .then(res => eventBus.$emit('food-added', res))
-     }
   },
   mounted() {
     eventBus.$on('food-search-result', newFood => {
       this.foods = newFood;
+    }),
+    eventBus.$on('food-deleted', id => {
+      const index = this.foods.findIndex(food => food._id === id);
+      this.foods.splice(index, 1);
     })
   }
-
 }
+}
+
 </script>
 
 <style lang="css" scoped>

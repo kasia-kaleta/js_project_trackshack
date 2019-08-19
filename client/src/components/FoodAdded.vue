@@ -9,6 +9,8 @@
         <p>Fat: {{ food.fat }}</p>
         <p>Protein: {{ food.protein }}</p>
         <p>Carbs: {{ food.carbs }}</p>
+
+        <button @click="handleDelete(food._id)">Delete Food</button>
       </li>
     </ul>
 
@@ -16,10 +18,18 @@
 </template>
 
 <script>
+import { eventBus } from '@/main';
+import FoodService from '@/services/FoodService.js'
 
 export default {
   name: 'food-added',
-  props: [ 'foodAdded' ]
+  props: [ 'foodAdded' ],
+  methods: {
+    handleDelete(id){
+      FoodService.deleteFood(id)
+      .then(response => eventBus.$emit('food-deleted', id));
+    }
+  }
 
 }
 </script>
