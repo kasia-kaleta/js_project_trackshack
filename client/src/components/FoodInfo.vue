@@ -4,8 +4,8 @@
 
 
     <ul v-for="(food, index) in foods" :key="index" :food="food">
-      <li>Food name: {{food.food_name}}</li>
-      <li>Serving Size: {{food.serving_unit}}</li>
+      <li>Food name: {{ food.food_name }}</li>
+      <li>Serving Size: {{ food.serving_unit }}</li>
       <button @click="addFood(index)">Save Food</button>
     </ul>
 
@@ -14,7 +14,7 @@
 
 <script>
 import FoodService from '@/services/FoodService.js';
-import { eventBus } from '../main.js';
+import { eventBus } from '@/main.js';
 
 export default {
   name: 'food-info',
@@ -36,15 +36,17 @@ export default {
        }
        FoodService.postFood(food)
          .then(res => eventBus.$emit('food-added', res))
-     }
+    }
   },
   mounted() {
     eventBus.$on('food-search-result', newFood => {
+      console.log(newFood);
       this.foods = newFood;
-    })
-  }
+    }),
 
+  }
 }
+
 </script>
 
 <style lang="css" scoped>

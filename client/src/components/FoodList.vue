@@ -21,7 +21,6 @@ import {eventBus} from '@/main.js';
 
 export default {
   name: 'food-list',
-  // props: ['foodList',
   data(){
     return {
       search: '',

@@ -1,11 +1,11 @@
-const baseURL = 'http://localhost:3000';
+const baseURL = 'http://localhost:3000/';
 
 export default {
   getFoods(){
     return fetch(baseURL)
     .then(res => res.json())
   },
-  
+
   postFood(payload){
     return fetch(baseURL, {
       method: 'POST',
@@ -14,4 +14,10 @@ export default {
     })
     .then(res => res.json())
   },
+
+  deleteFood(id){
+    return fetch(baseURL + id, {
+      method: 'DELETE'
+    })
+  }
 }
