@@ -2,11 +2,8 @@
 
 
     <ul v-if="food !== null">
-      <li>{{food.name}}</li>
-      <li>{{food.calories}}</li>
-      <li>{{food.fat}}</li>
-      <li>{{food.carbs}}</li>
-      <li>{{food.protein}}</li>
+      <li>{{food.food_name}}</li>
+      <li>{{food.serving_unit}}</li>
       <button @click="addFood(food._id)">Save Food</button>
     </ul>
 
