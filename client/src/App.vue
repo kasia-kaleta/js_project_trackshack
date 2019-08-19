@@ -30,8 +30,8 @@ export default {
 
   },
   mounted(){
-    FoodService.getFoods2()
-    .then(foodList => this.foodList = foodList.foods); // get the 'foods' table from the API's response
+    // FoodService.getFoods2()
+    // .then(foodList => this.foodList = foodList.foods); // get the 'foods' table from the API's response
 
     eventBus.$on('food-list-item-selected', (selectedIndex) => {
       this.selectedFood = this.foodList[selectedIndex];

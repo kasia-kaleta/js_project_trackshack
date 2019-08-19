@@ -5,14 +5,7 @@ export default {
     return fetch(baseURL)
     .then(res => res.json())
   },
-  getFoods2(input){
-    return fetch('http://localhost:3000/search', {
-      method: 'POST',
-      body: `{"query": ${input}}`,
-      headers: {'Content-Type': 'application/json'}
-    })
-    .then(res => res.json())
-  },
+  
   postFood(payload){
     return fetch(baseURL, {
       method: 'POST',

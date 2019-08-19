@@ -21,6 +21,7 @@ MongoClient.connect('mongodb://localhost:27017')
 //fetch
   app.post('/search', (req, res) => {
     const query = req.body;
+    console.log(JSON.stringify(query));
     fetch("https://trackapi.nutritionix.com/v2/natural/nutrients", {
       method: 'POST',
       body: JSON.stringify(query),

@@ -3,9 +3,12 @@
     <h3>All Foods</h3>
 
     <div class="">
-      <input @submit="getFoods2" type="text" placeholder="search food..." method="post"/>
-      <input type="submit" id="save" value="Search">
+      <form @submit.prevent="getFoods2">
 
+        <input name="search" v-model="search" type="text" placeholder="search food..." />
+        <input type="submit" id="search" value="Search">
+
+      </form>
     </div>
 
 
@@ -21,24 +24,28 @@ export default {
   props: ['foodList'],
   data(){
     return {
-      search: ''
+      search: '',
+      foods: []
     }
   },
   methods: {
+    getFoods2(){
+      return fetch('http://localhost:3000/search', {
+        method: 'POST',
+        body: `{"query": "${this.$data.search}"}`,
+        headers: {'Content-Type': 'application/json'}
+      })
+      .then(res => res.json())
+      .then(data => this.foods = data)
+    },
     foodSelected(event){
       const selectedIndex = event.target.value;
       eventBus.$emit('food-list-item-selected', selectedIndex);
-    },
-    getFoods2(event){
-      event.preventDefault()
-      const food = {
-        
-      }
     }
   }
-
 }
-</script>
 
-<style lang="css" scoped>
-</style>
+  </script>
+
+  <style lang="css" scoped>
+  </style>
