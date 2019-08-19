@@ -42,7 +42,7 @@ export default {
     eventBus.$on('food-search-result', newFood => {
       console.log(newFood);
       this.foods = newFood;
-    }),
+    })
 
   }
 }
