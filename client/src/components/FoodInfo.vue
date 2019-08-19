@@ -4,8 +4,8 @@
 
 
     <ul v-for="(food, index) in foods" :key="index" :food="food">
-      <li>{{food.food_name}}</li>
-      <li>{{food.serving_unit}}</li>
+      <li>Food name: {{food.food_name}}</li>
+      <li>Serving Size: {{food.serving_unit}}</li>
       <button @click="addFood(index)">Save Food</button>
     </ul>
 
@@ -40,7 +40,6 @@ export default {
   },
   mounted() {
     eventBus.$on('food-search-result', newFood => {
-      console.log(newFood);
       this.foods = newFood;
     })
   }
