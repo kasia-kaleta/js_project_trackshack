@@ -1,5 +1,6 @@
 <template lang="html">
 <div id="app">
+
   <food-list />
   <food-info />
   <food-added :foodAdded="foodAdded"/>
@@ -36,6 +37,11 @@ export default {
 
 
     eventBus.$on('food-added', food => this.foodAdded.push(food));
+
+    eventBus.$on('food-deleted', id => {
+      const index = this.foodAdded.findIndex(food => food._id === id);
+      this.foodAdded.splice(index, 1);
+    })
 
   },
 
