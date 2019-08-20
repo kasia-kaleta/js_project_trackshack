@@ -1,12 +1,12 @@
 <template lang="html">
-  <div>
-    <h3>All Foods</h3>
+  <div id="searchDiv">
+    <h3>Food search</h3>
 
-    <div class="">
+    <div class="searchBar">
       <form @submit.prevent="getFoods2">
 
-        <input name="search" v-model="search" type="text" placeholder="search food..." />
-        <input type="submit" id="search" value="Search">
+        <input id="search" name="search" v-model="search" type="text" placeholder="Search food..." />
+        <input id="searchButton" type="submit" value="Search">
 
       </form>
     </div>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+
 import {eventBus} from '@/main.js';
 
 export default {
@@ -39,9 +40,38 @@ export default {
       .then(res => eventBus.$emit('food-search-result', this.foods))
     }
   }
+}
+</script>
+
+<style lang="css" scoped>
+
+  h3 {
+    text-align: center;
+
+    font-size: 40px;
   }
 
-  </script>
+  .searchBar {
+    padding: 20px;
+  }
 
-  <style lang="css" scoped>
-  </style>
+  #searchDiv {
+    text-align: center;
+  }
+
+  #search {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    background-color: wheat;
+
+  }
+
+  #searchButton {
+    font-size: 20px;
+    padding: 10px;
+    background-color: wheat;
+
+  }
+
+</style>
