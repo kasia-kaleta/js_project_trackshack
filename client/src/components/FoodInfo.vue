@@ -32,7 +32,8 @@ export default {
          calories: this.foods[index].nf_calories,
          fat: this.foods[index].nf_total_fat,
          protein: this.foods[index].nf_protein,
-         carbs: this.foods[index].nf_total_carbohydrate
+         carbs: this.foods[index].nf_total_carbohydrate,
+         sugar: this.foods[index].nf_sugars
        }
        FoodService.postFood(food)
          .then(res => eventBus.$emit('food-added', res))
