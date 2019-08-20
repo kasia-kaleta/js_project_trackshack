@@ -3,6 +3,7 @@
     <h2>Saved Food</h2>
     <ul>
       <li v-for="food in foodAdded">
+        <!-- <food-render :food="food"> -->
         <h3>Name: {{ food.name }}</h3>
         <p>Serving Size: {{ food.servingSize }}</p>
         <p>Calories: {{ food.calories }}</p>

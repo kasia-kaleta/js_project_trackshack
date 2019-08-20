@@ -10,10 +10,7 @@
   <food-search />
   <food-info />
   <food-added :foodAdded="foodAdded"/>
-  <food-graph />
-
-
-
+  <food-graph :calories="totalCalories"/>
 </div>
 </template>
 
@@ -33,8 +30,11 @@ export default {
     }
   },
   computed: {
-
-
+    totalCalories() {
+      return this.foodAdded.reduce((total, food) => {
+        return total + food.calories;
+      }, 0);
+    }
   },
   mounted(){
 
