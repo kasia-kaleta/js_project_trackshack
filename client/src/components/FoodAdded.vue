@@ -35,4 +35,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#app {
+  border: solid black;
+}
 </style>
