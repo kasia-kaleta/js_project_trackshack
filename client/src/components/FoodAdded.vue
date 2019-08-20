@@ -3,13 +3,8 @@
     <h2>Saved Food</h2>
     <ul>
       <li v-for="food in foodAdded">
-        <!-- <food-render :food="food"> -->
-        <h3>Name: {{ food.name }}</h3>
-        <p>Serving Size: {{ food.servingSize }}</p>
-        <p>Calories: {{ food.calories }}</p>
-        <p>Fat: {{ food.fat }}</p>
-        <p>Protein: {{ food.protein }}</p>
-        <p>Carbs: {{ food.carbs }}</p>
+        <food-breakdown :food="food"/>
+
 
         <button @click="handleDelete(food._id)">Delete Food</button>
       </li>
@@ -20,7 +15,8 @@
 
 <script>
 import { eventBus } from '@/main';
-import FoodService from '@/services/FoodService.js'
+import FoodService from '@/services/FoodService.js';
+import FoodBreakdown from './FoodBreakdown.vue';
 
 export default {
   name: 'food-added',
@@ -30,6 +26,9 @@ export default {
       FoodService.deleteFood(id)
       .then(response => eventBus.$emit('food-deleted', id));
     }
+  },
+  components: {
+    'food-breakdown' : FoodBreakdown
   }
 
 }
