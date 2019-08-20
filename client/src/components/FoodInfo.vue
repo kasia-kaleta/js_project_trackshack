@@ -54,4 +54,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+li {
+  list-style-type: none;
+}
+
 </style>

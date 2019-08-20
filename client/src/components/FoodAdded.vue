@@ -36,6 +36,15 @@ export default {
 
 <style lang="css" scoped>
 
+h2 {
+
+}
+
+ul {
+ list-style-type: none;
+ padding-inline-start: 0px;
+}
+
 #app {
   border: solid black;
 }

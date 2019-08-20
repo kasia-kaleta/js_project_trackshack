@@ -38,6 +38,7 @@ export default {
       .then(res => res.json())
       .then(data => this.foods = data.foods)
       .then(res => eventBus.$emit('food-search-result', this.foods))
+      .then(res => this.search = '');
     }
   }
 }
@@ -46,8 +47,6 @@ export default {
 <style lang="css" scoped>
 
   h3 {
-    text-align: center;
-
     font-size: 40px;
   }
 
