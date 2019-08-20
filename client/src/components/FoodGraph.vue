@@ -24,17 +24,25 @@ export default {
           text: 'Caloroies Eaten'
         },
         xAxis: {
-          categories: ["women", "men"]
+          categories: ["totals"]
+        },
+        yAxis: {
+          title: {
+            text: "Calories"
+          }
         },
         credits: {
           enabled: false
         },
         series: [{
-          name: 'Your intake',
-          data: [this.calories, this.calories]
+          name: "Female Allowance",
+          data: [2000]
         },{
-          name: "Allowance",
-          data: [2000, 2500]
+          name: 'Your intake',
+          data: [this.calories]
+        },{
+          name: "Male Allowance",
+          data: [2500]
         }]
       }
     }
