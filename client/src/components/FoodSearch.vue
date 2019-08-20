@@ -20,7 +20,7 @@
 import {eventBus} from '@/main.js';
 
 export default {
-  name: 'food-list',
+  name: 'food-search',
   data(){
     return {
       search: '',

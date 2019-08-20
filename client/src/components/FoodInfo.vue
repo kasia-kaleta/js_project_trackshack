@@ -40,7 +40,6 @@ export default {
   },
   mounted() {
     eventBus.$on('food-search-result', newFood => {
-      console.log(newFood);
       this.foods = newFood;
     })
 

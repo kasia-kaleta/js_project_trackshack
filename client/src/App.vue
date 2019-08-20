@@ -1,7 +1,7 @@
 <template lang="html">
 <div id="app">
 
-  <food-list />
+  <food-search />
   <food-info />
   <food-added :foodAdded="foodAdded"/>
 
@@ -12,7 +12,7 @@
 
 <script>
 import FoodService from './services/FoodService.js'
-import FoodList from './components/FoodList.vue'
+import FoodSearch from './components/FoodSearch.vue'
 import FoodAdded from './components/FoodAdded.vue'
 import FoodInfo from './components/FoodInfo.vue'
 import {eventBus} from '@/main.js'
@@ -21,7 +21,6 @@ export default {
   name: 'app',
   data(){
     return {
-      foodList: [],
       foodAdded: []
     }
   },
@@ -30,8 +29,7 @@ export default {
 
   },
   mounted(){
-    // FoodService.getFoods2()
-    // .then(foodList => this.foodList = foodList.foods); // get the 'foods' table from the API's response
+
     FoodService.getFoods()
     .then( res => this.foodAdded = res);
 
@@ -47,7 +45,7 @@ export default {
 
   components: {
     FoodService,
-    'food-list' :FoodList,
+    'food-search' :FoodSearch,
     'food-info' :FoodInfo,
     'food-added' :FoodAdded
    }
