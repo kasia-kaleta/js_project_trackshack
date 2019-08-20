@@ -54,6 +54,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+ul {
+padding-inline-start: 0px;
+}
 
 li {
   list-style-type: none;
