@@ -87,6 +87,7 @@ export default {
   font-weight: bold;
   color: black;
   padding-bottom: 20px;
+  display: flex;
 }
 
 table, td, th, tr {

@@ -107,7 +107,10 @@ export default {
             y: this.food.sugar
           }]
 
-        }]
+        }],
+        credits: {
+          enabled: false
+        }
       }
     }
   }

@@ -8,7 +8,7 @@
 
   <food-search />
   <food-info/>
-  <food-graph :calories="totalCalories"/>
+  <food-graph :fat="totalFat" :protein="totalProtein" :carbs="totalCarbs" :sugar="totalSugar" :calories="totalCalories"/>
   <food-added :foodAdded="foodAdded"/>
 
 </div>
@@ -33,6 +33,26 @@ export default {
     totalCalories() {
       return this.foodAdded.reduce((total, food) => {
         return total + food.calories;
+      }, 0);
+    },
+    totalFat() {
+      return this.foodAdded.reduce((total, food) => {
+        return total + food.fat;
+      }, 0);
+    },
+    totalProtein() {
+      return this.foodAdded.reduce((total, food) => {
+        return total + food.protein;
+      }, 0);
+    },
+    totalCarbs() {
+      return this.foodAdded.reduce((total, food) => {
+        return total + food.carbs;
+      }, 0);
+    },
+    totalSugar() {
+      return this.foodAdded.reduce((total, food) => {
+        return total + food.sugar;
       }, 0);
     }
   },
@@ -66,6 +86,7 @@ export default {
   #app {
     text-align: center;
     background-color: lightgrey;
+    padding-bottom: 290px;
   }
 
   #img {
