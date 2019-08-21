@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="added">
-    <h2>Saved Food</h2>
+    <h2>Todays Food Diary</h2>
     <ul>
       <li v-for="food in foodAdded">
         <food-breakdown :food="food"/>
@@ -69,7 +69,13 @@ export default {
 
 
 h2 {
-
+  text-decoration: underline;
+  font-size: 40px;
+  font-family: ‘Cutive Mono’, monospace;
+  font-weight: lighter;
+  color: #587682;
+  opacity: 10%;
+  padding: 20px;
 }
 
 ul {
@@ -80,8 +86,9 @@ ul {
 li {
   display: inline-flex;
   padding: 10px;
-  border: solid black;
+  border: solid #D8C3A5;
   margin: 10px;
+  background-color: white;
 }
 
 </style>

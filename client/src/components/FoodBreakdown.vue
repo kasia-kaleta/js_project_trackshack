@@ -5,7 +5,7 @@
 
       <table>
         <tr>
-          <th>Food</th>
+          <th></th>
           <th>Serving</th>
           <th>Calories</th>
           <th>Fat</th>

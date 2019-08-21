@@ -11,7 +11,7 @@
   <template v-if="foods !== undefined  ">
     <table v-for="(food, index) in foods" :key="index" :food="food" >
       <tr>
-        <th>Food</th>
+        <th></th>
         <th>Serving</th>
         <th>Calories</th>
         <th>Fat</th>
@@ -29,11 +29,14 @@
         <td>{{ food.nf_sugars }}</td>
       </tr>
       <img :src="food.photo.thumb" alt="">
-      <button @click="addFood(index)">Save Food</button>
+      <div class="wrap">
+        <a @click="addFood(index)" href="#" class="button">Add to Diary</a>
+      </div>
+      <!-- <button @click="addFood(index)">Save Food</button> -->
     </table>
   </template>
 <template v-else>
-  <h3>food not found, try again!</h3>
+  <h3>Food not found, try again!</h3>
 </template>
 
 
@@ -86,23 +89,20 @@ export default {
 
 <style lang="css" scoped>
 
-button {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .info {
   font-size: 20px;
   font-weight: bold;
-  color: maroon;
+  color: black;
   padding-bottom: 20px;
 }
 
 table, td, th, tr {
   margin-left: auto;
   margin-right: auto;
-  border: solid black 1px;
+  border: solid #D8C3A5 1px;
   padding: 5px;
+  background-color: white;
+  text-transform: capitalize;
 }
 ul {
 padding-inline-start: 0px;
@@ -110,6 +110,39 @@ padding-inline-start: 0px;
 
 li {
   list-style-type: none;
+}
+
+wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -86px;
+    margin-left: -89px;
+    text-align: center;
+}
+
+a {
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    display: block;
+    margin: 20px auto;
+    max-width: 180px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 20px 30px;
+}
+
+a.button {
+    color: #587682;
+    box-shadow: #587682 0 0px 0px 2px inset;
+}
+
+a.button:hover {
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: #587682 0 0px 0px 40px inset;
 }
 
 </style>

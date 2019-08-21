@@ -21,7 +21,7 @@ export default {
           type: 'column'
         },
         title: {
-          text: 'Calories Eaten'
+          text: 'Calories Consumed'
         },
         xAxis: {
           categories: ["totals"]

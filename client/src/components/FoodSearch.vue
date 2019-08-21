@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="searchDiv">
-    <h3>Food search</h3>
+    
 
     <div class="searchBar">
       <form @submit.prevent="getFoods2">
@@ -46,8 +46,14 @@ export default {
 
 <style lang="css" scoped>
 
+
+
   h3 {
     font-size: 40px;
+    font-family: ‘Cutive Mono’, monospace;
+    font-weight: lighter;
+    color: #587682;
+    opacity: 10%;
   }
 
   .searchBar {
@@ -69,8 +75,12 @@ export default {
   #searchButton {
     font-size: 20px;
     padding: 10px;
-    background-color: lightblue;
+    background-color: #587682;
     opacity: 50%;
+    font-family: ‘Cutive Mono’, monospace;
+    font-weight: lighter;
+    color: white;
+    opacity: 10%;
 
   }
 

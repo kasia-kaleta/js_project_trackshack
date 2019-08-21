@@ -1,11 +1,10 @@
 <template lang="html">
-<div id="app">
-  <h1>TrackShack</h1>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <a href="#" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <a href="#" class="fa fa-instagram"></a>
+<div id="app">
+
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap" rel="stylesheet">
+  <img id="img" src="/images/image.png" alt="trackshack"><br>
+
 
   <food-search />
   <food-info />
@@ -66,6 +65,11 @@ export default {
 
   #app {
     text-align: center;
+    background-color: lightgrey;
+  }
+
+  #img {
+    max-width: 600px;
   }
 
   h1 {
