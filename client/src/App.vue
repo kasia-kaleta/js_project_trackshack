@@ -7,7 +7,7 @@
 
 
   <food-search />
-  <food-info />
+  <food-info/>
   <food-graph :calories="totalCalories"/>
   <food-added :foodAdded="foodAdded"/>
 

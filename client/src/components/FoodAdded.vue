@@ -7,6 +7,10 @@
       </li>
     </ul>
 
+    <h3>Total Fat: {{this.totalFat}}g</h3>
+    <h3>Total Protein: {{this.totalProtein}}g</h3>
+    <h3>Total Carbs: {{this.totalCarbs}}g</h3>
+    <h3>Total Sugar: {{this.totalSugar}}g</h3>
   </div>
 </template>
 
@@ -19,7 +23,29 @@ export default {
   props: [ 'foodAdded' ],
   components: {
     'food-breakdown' : FoodBreakdown
-  }
+  },
+  computed: {
+    totalFat() {
+      return this.foodAdded.reduce((total, food) => {
+        return total + food.fat;
+      }, 0);
+    },
+    totalProtein() {
+      return this.foodAdded.reduce((total, food) => {
+        return total + food.protein;
+      }, 0);
+    },
+    totalCarbs() {
+      return this.foodAdded.reduce((total, food) => {
+        return total + food.carbs;
+      }, 0);
+    },
+    totalSugar() {
+      return this.foodAdded.reduce((total, food) => {
+        return total + food.sugar;
+      }, 0);
+    }
+  },
 
 }
 </script>
