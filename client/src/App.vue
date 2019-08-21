@@ -9,8 +9,9 @@
 
   <food-search />
   <food-info />
-  <food-added :foodAdded="foodAdded"/>
   <food-graph :calories="totalCalories"/>
+  <food-added :foodAdded="foodAdded"/>
+
 </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template lang="html">
 
-<div class="">
+<div class="info">
 
 
     <ul v-for="(food, index) in foods" :key="index" :food="food">
@@ -54,6 +54,15 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.info {
+  font-size: 20px;
+  font-weight: bold;
+  color: maroon;
+  padding-bottom: 20px;
+}
+
+
 ul {
 padding-inline-start: 0px;
 }

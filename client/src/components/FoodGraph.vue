@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <highcharts :options="chartOptions"></highcharts>
+  <highcharts id="graph" :options="chartOptions"></highcharts>
 
 </template>
 
@@ -53,4 +53,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+  #graph {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 </style>
