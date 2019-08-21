@@ -62,14 +62,15 @@ export default {
     text-align: center;
     font-size: 20px;
     padding: 10px;
-    background-color: wheat;
+    background-color: white;
 
   }
 
   #searchButton {
     font-size: 20px;
     padding: 10px;
-    background-color: wheat;
+    background-color: lightblue;
+    opacity: 50%;
 
   }
 
